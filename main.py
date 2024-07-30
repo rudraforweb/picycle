@@ -16,7 +16,18 @@ import pynmea2
 
 import subprocess
 
-import threading
+#RPi.GPIO:
+import RPi.GPIO as GPIO
+from gpiozero import LED
+from time import sleep
+GPIO.setmode(GPIO.BCM) 
+
+leftled = LED(17) 
+GPIO.setup(6, GPIO.IN)
+
+rightled = LED(27)
+GPIO.setup(16, GPIO.IN)
+
 
 #SPI config:
 DC = 25
@@ -62,6 +73,8 @@ draw.text((120,10), "D", font=carcyclesmall, fill="#FFFF00")
 draw.text((90, 90), "--", font=font110, fill="#FFFFFF")
 draw.text((100, 210), "kph", font=font32, fill="#FFFFFF")
 disp.display()
+rightled.on()
+leftled.on()
 time.sleep(2)
 while True:
 	port="/dev/serial0"
@@ -119,21 +132,27 @@ while True:
 	temperature = float(parts[2])
 	# Print the extracted temperature
 	
-	if left == 1:
+	if GPIO.input(6) == 1:
 		draw.text((5,0), "A", font=carcycle, fill="#00ff00")
 		disp.display()
+		leftled.on()
 		time.sleep(0.2)
 		draw.text((5,0), "A", font=carcycle, fill="#A9A9A9")
 		disp.display()
-	
+		leftled.off()
+
 		
-	if right == 1:
+	elif GPIO.input(16) == 1:
 		draw.text((190,0), "B", font=carcycle, fill="#00ff00")
 		disp.display()
+		rightled.on()
 		time.sleep(0.2)
 		draw.text((190,0), "B", font=carcycle, fill="#A9A9A9")
 		disp.display()
-	
+		rightled.off()
+		
+	else:
+		rightled.off()
 		
 	
 	
