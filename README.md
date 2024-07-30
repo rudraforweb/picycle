@@ -4,7 +4,7 @@ Accessory for bicycles with Raspberry Pi!
 
 ⚠️ THIS PROJECT IS NOT FINISHED ⚠️
 
-##### version: v0.5-beta
+##### version: v0.6-beta
 
 The main goal of this is to show speed on a display.
 I have also included other things such as:
