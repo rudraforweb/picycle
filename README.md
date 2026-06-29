@@ -2,7 +2,7 @@
 Accessory for bicycles with Raspberry Pi!
 ![Screenshot_2024-07-29_at_5 16 42_PM-removebg-preview](https://github.com/user-attachments/assets/4173ac8d-9a3d-4256-a5ec-2ea9102b92e8)
 
-⚠️ THIS PROJECT IS NOT FINISHED ⚠️
+⚠️ Deprecated: this project is no longer updated ⚠️
 
 ##### version: v0.6-beta
 
@@ -30,8 +30,4 @@ and more to come! (if im not lazy)
 * A good view of the sky for speedometer,
 * Good connections while soldering to avoid a short-circuit.
 
-## other:
 
-I will upload the .STL's and wiring diagrams later.
-I'm planning when v1 releases I will make a pcb so everything will easily connect, but that's the future.
-I will post a youtube video on this project after v1.
